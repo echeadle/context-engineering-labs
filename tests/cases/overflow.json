@@ -1,0 +1,24 @@
+{
+    "id": "overflow-context",
+    "description": "Long context should not push out policy blocks.",
+    "messages": [
+        {
+            "role": "system",
+            "content": "CRITICAL: Answer must include the token POLICY_OK."
+        },
+        {
+            "role": "user",
+            "content": "A"
+        },
+        {
+            "role": "user",
+            "content": "B"
+        }
+    ],
+    "assertions": [
+        {
+            "type": "contains",
+            "value": "POLICY_OK"
+        }
+    ]
+}
